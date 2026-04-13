@@ -24,71 +24,97 @@
             <section class="container">
                 <!-- add content here -->
                 <form @submit="checkForm" method="post" action="http://mercury.swin.edu.au/it000000/formtest.php" novalidate>
-                    <fieldset>
+                    <fieldset class="mb-3">
                         <legend>Personal Information</legend>
-                        <br>
-                        <label for="fName">First Name</label>
-                        <input type="text" name="fName" id="fName" v-model="fName">
-                        <br>
-                        <label for="lName">Last Name</label>
-                        <input type="text" name="lName" id="lName" v-model="lName">
-                        <br>
-                        <label for="dob">Date of Birth</label>
-                        <input type="date" name="dob" id="dob" v-model="dob">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="fName" class="form-label">First Name:</label>
+                                <input type="text" class="form-control" name="fName" id="fName" v-model="fName">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lName" class="form-label">Last Name:</label>
+                                <input type="text" class="form-control" name="lName" id="lName" v-model="lName">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="dob" class="form-label">Date of Birth:</label>
+                                <input type="date" class="form-control" name="dob" id="dob" v-model="dob">
+                            </div>
+                        </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset class="mb-3">
                         <legend>Account Details</legend>
-                        <br>
-                        <label for="uName">Username</label>
-                        <input type="text" name="uName" id="uName" v-model="uName">
-                        <br>
-                        <label for="pwd">Password</label>
-                        <input type="password" name="pwd" id="pwd" v-model="pwd">
-                        <br>
-                        <label for="pwdCon">Confirm Password</label>
-                        <input type="password" name="pwdCon" id="pwdCon" v-model="pwdCon">
-                        <br>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" v-model="email">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="uName" class="form-label">Username:</label>
+                                <input type="text" class="form-control" name="uName" id="uName" v-model="uName">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pwd" class="form-label">Password:</label>
+                                <input type="password" class="form-control" name="pwd" id="pwd" v-model="pwd">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="pwdCon" class="form-label">Confirm Password:</label>
+                                <input type="password" class="form-control" name="pwdCon" id="pwdCon" v-model="pwdCon">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" name="email" id="email" v-model="email">
+                            </div>
+                        </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset class="mb-3">
                         <legend>Address</legend>
-                        <br>
-                        <label for="strAdd">Street Address</label>
-                        <input type="text" name="strAdd" id="strAdd" v-model="strAdd">
-                        <br>
-                        <label for="suburb">Suburb</label>
-                        <input type="text" name="suburb" id="suburb" v-model="suburb">
-                        <br>
-                        <label for="postcode">Postcode</label>
-                        <input type="text" name="postcode" id="postcode" v-model="postcode">
-                        <br>
-                        <label for="phnNum">Mobile Number</label>
-                        <input type="text" name="phnNum" id="phnNum" v-model="phnNum">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="strAdd" class="form-label">Street Address:</label>
+                                <input type="text" class="form-control" name="strAdd" id="strAdd" v-model="strAdd">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="suburb" class="form-label">Suburb:</label>
+                                <input type="text" class="form-control" name="suburb" id="suburb" v-model="suburb">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="postcode" class="form-label">Postcode:</label>
+                                <input type="text" class="form-control" name="postcode" id="postcode" v-model="postcode">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phnNum" class="form-label">Mobile Number:</label>
+                                <input type="text" class="form-control" name="phnNum" id="phnNum" v-model="phnNum">
+                            </div>
+                        </div>
                     </fieldset>
-                    <label for="jobCat">Preferred job Category</label>
-                    <select name="jobCat" id="jobCat" v-model="jobCat">
-                        <option disabled selected value="default">--SELECT--</option>
-                        <option value="ai">AI</option>
-                        <option value="dataSci">Data Science</option>
-                        <option value="webDev">Web Development</option>
-                    </select>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="jobCat" class="form-label">Preferred Job Category:</label>
+                            <select class="form-select" name="jobCat" id="jobCat" v-model="jobCat">
+                                <option disabled selected value="default">-- Please select --</option>
+                                <option value="ai">AI</option>
+                                <option value="dataSci">Data Science</option>
+                                <option value="webDev">Web Development</option>
+                            </select>
+                        </div>
+                    </div>
                     <p>
                         <input type="button" class="btn btn-secondary me-2" value="Terms and Conditions" @click="toggleTerms">
                         <input type="submit" class="btn btn-primary" value="Submit">
                     </p>
                     <div v-if="showTerms">
                         <p><strong>Terms and Conditions</strong></p>
-                        <p>By submitting this application, you agree to provide accurate and truthful information. Your personal details will be used solely for the purpose of processing your job application and will not be shared with third parties without your consent. You acknowledge that submitting false information may result in disqualification from consideration.</p>
+                        <p>By submitting this application, you agree to provide accurate and truthful information.</p>
                     </div>
-
+                    <div v-if="errors.length">
+                        <p>Please correct the following error(s):</p>
+                        <ul>
+                            <li v-for="error in errors">{{ error }}</li>
+                        </ul>
+                    </div>
                 </form>
-                <div v-if="errors.length">
-                    <p>Please correct the following error(s):</p>
-                    <ul>
-                        <li v-for="error in errors">{{ error }}</li>
-                    </ul>
-                </div>
             </section>
         </div>
     </main>
