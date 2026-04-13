@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Event Information (Searchable Table)">
+    <meta name="description" content="Job Application Forms">
     <meta name="author" content="Oliver Scott">
-    <title>Insight Hire</title>
+    <title>Job Application Forms</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@3.5.14/dist/vuetify.min.css"
 </head>
 <body>
     <header>
         <div class="container">
             <div class="col-12">
-                <h1>Insight Hire</h1>
+                <h1>Job Application</h1>
             </div>
         </div>
     </header>
@@ -22,6 +23,72 @@
         <div id="app">
             <section class="container">
                 <!-- add content here -->
+                <form @submit="checkForm" method="post" action="http://mercury.swin.edu.au/it000000/formtest.php" novalidate>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <br>
+                        <label for="fName">First Name</label>
+                        <input type="text" name="fName" id="fName" v-model="fName">
+                        <br>
+                        <label for="lName">Last Name</label>
+                        <input type="text" name="lName" id="lName" v-model="lName">
+                        <br>
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" name="dob" id="dob" v-model="dob">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Account Details</legend>
+                        <br>
+                        <label for="uName">Username</label>
+                        <input type="text" name="uName" id="uName" v-model="uName">
+                        <br>
+                        <label for="pwd">Password</label>
+                        <input type="password" name="pwd" id="pwd" v-model="pwd">
+                        <br>
+                        <label for="pwdCon">Confirm Password</label>
+                        <input type="password" name="pwdCon" id="pwdCon" v-model="pwdCon">
+                        <br>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" v-model="email">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Address</legend>
+                        <br>
+                        <label for="strAdd">Street Address</label>
+                        <input type="text" name="strAdd" id="strAdd" v-model="strAdd">
+                        <br>
+                        <label for="suburb">Suburb</label>
+                        <input type="text" name="suburb" id="suburb" v-model="suburb">
+                        <br>
+                        <label for="postcode">Postcode</label>
+                        <input type="text" name="postcode" id="postcode" v-model="postcode">
+                        <br>
+                        <label for="phnNum">Mobile Number</label>
+                        <input type="text" name="phnNum" id="phnNum" v-model="phnNum">
+                    </fieldset>
+                    <label for="jobCat">Preferred job Category</label>
+                    <select name="jobCat" id="jobCat" v-model="jobCat">
+                        <option disabled selected value="default">--SELECT--</option>
+                        <option value="ai">AI</option>
+                        <option value="dataSci">Data Science</option>
+                        <option value="webDev">Web Development</option>
+                    </select>
+                    <p>
+                        <input type="button" class="btn btn-secondary me-2" value="Terms and Conditions" @click="toggleTerms">
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </p>
+                    <div v-if="showTerms">
+                        <p><strong>Terms and Conditions</strong></p>
+                        <p>By submitting this application, you agree to provide accurate and truthful information. Your personal details will be used solely for the purpose of processing your job application and will not be shared with third parties without your consent. You acknowledge that submitting false information may result in disqualification from consideration.</p>
+                    </div>
+
+                </form>
+                <div v-if="errors.length">
+                    <p>Please correct the following error(s):</p>
+                    <ul>
+                        <li v-for="error in errors">{{ error }}</li>
+                    </ul>
+                </div>
             </section>
         </div>
     </main>
