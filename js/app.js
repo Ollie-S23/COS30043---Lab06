@@ -128,6 +128,7 @@ const app = Vue.createApp({
                 this.errors.push("Please select a job category");
                 result = false;
             }
+            
 
             if (!result)
                 e.preventDefault();
@@ -139,5 +140,4 @@ const app = Vue.createApp({
 });
 
 
-app.use(router);
 app.mount('#app');
