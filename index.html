@@ -8,7 +8,6 @@
     <title>Job Application Forms</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/vuetify@3.5.14/dist/vuetify.min.css"
 </head>
 <body>
     <header>
@@ -71,11 +70,11 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="strAdd" class="form-label">Street Address:</label>
-                                <input type="text" class="form-control" name="strAdd" id="strAdd" v-model="strAdd">
+                                <input type="text" placeholder="optional" class="form-control" name="strAdd" id="strAdd" v-model="strAdd">
                             </div>
                             <div class="col-md-6">
                                 <label for="suburb" class="form-label">Suburb:</label>
-                                <input type="text" class="form-control" name="suburb" id="suburb" v-model="suburb">
+                                <input type="text" placeholder="optional" class="form-control" name="suburb" id="suburb" v-model="suburb">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -127,11 +126,7 @@
         </div>
     </footer>
 
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/vue.js"></script>
-    <script src="node_modules/vue-router/dist/vue-router.global.js"></script>
-    <!-- add component files links here -->
-    <script src="js/router.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
